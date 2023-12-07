@@ -1,0 +1,23 @@
+.App {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.Filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Filter li {
+  list-style-type: none;
+  margin: 8px;
+}
+
+.Filter li input {
+  margin-inline-end: 8px;
+}
+
+.Gallery {
+  position: relative;
+}
