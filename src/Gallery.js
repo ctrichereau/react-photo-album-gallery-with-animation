@@ -17,7 +17,8 @@ const OffscreenGallery = React.memo(function OffscreenGallery({
   return (
     <>
       <PhotoAlbum
-        layout="rows"
+        layout="masonry"
+        columns={3}
         photos={photos}
         componentsProps={{
           containerProps: { style: { height: 0, overflow: "hidden" } },
@@ -35,7 +36,14 @@ const OffscreenGallery = React.memo(function OffscreenGallery({
           if (!model.find((item) => item.photo === photo)) {
             model.push({ photo, layout, imageProps });
           }
-          return <span />;
+          return (
+            <span
+              style={{
+                width: layout.width,
+                height: layout.height,
+              }}
+            />
+          );
         }}
         {...rest}
       />
