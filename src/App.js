@@ -4,6 +4,7 @@ import Gallery from "./Gallery";
 import allPhotos from "./photos";
 import "./App.css";
 
+// => Create all tags
 const allTags = allPhotos
   .flatMap(({ tags }) => tags || [])
   .filter((value, index, array) => array.indexOf(value) === index)
@@ -12,6 +13,7 @@ const allTags = allPhotos
 export default function App() {
   const [tags, setTags] = React.useState(allTags);
 
+  // => FIlter photos list with selected tags
   const photos = allPhotos.filter((photo) =>
     Boolean((photo.tags || []).find((tag) => tags.includes(tag)))
   );
